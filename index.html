@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offismekan Langırt</title>
+    <style>
+        /* Google Fonts - Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* Genel Sıfırlama ve Temel Stiller */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            min-height: 100vh;
+            color: #2d2d2d;
+        }
+
+        /* Başlık Alanı */
+        .header {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(15px);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4b2b72;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Ana İçerik Konteyneri - Grid Yapısı */
+        .container {
+            display: grid;
+            /* Puan tablosu için daha az, sağ sütunlar için daha fazla alan */
+            grid-template-columns: 3fr 2fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        /* Kart Stili */
+        .card {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        }
+
+        /* Başlık Stili */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #4b2b72;
+            border-bottom: 2px solid #a8edea;
+            padding-bottom: 5px;
+        }
+
+        /* Tablo Stili */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            table-layout: fixed;
+        }
+
+        .table thead tr {
+            background: #4b2b72;
+            color: white;
+            font-weight: 600;
+        }
+
+        .table th, .table td {
+            padding: 12px 6px;
+            text-align: center;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+        }
+
+        .table td:first-child, .table td:nth-child(2) {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .win {
+            color: #16a34a;
+            font-weight: 600;
+            background: rgba(22,163,74,0.1);
+            padding: 4px 6px;
+            border-radius: 12px;
+        }
+
+        .lose {
+            color: #dc2626;
+            font-weight: 600;
+            background: rgba(220,38,38,0.1);
+            padding: 4px 6px;
+            border-radius: 12px;
+        }
+
+        /* Form Elementleri Stili */
+        .label-select {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Seçim kutusunu ortalamak için kapsayıcı ekle */
+        .select-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .select-box {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 2px solid #a8edea;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 16px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        /* Bilgi Kutuları Stili */
+        #team-info {
+            margin-top: 15px;
+            text-align: center; /* Bilgi başlıklarını ortala */
+        }
+
+        .info-box {
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: #f3f4f6;
+            border-left: 5px solid #4b2b72;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            text-align: left; /* Bilgi kutusu içeriğini sola yasla */
+        }
+
+        .info-box.win {
+            border-left-color: #16a34a;
+            background: rgba(22,163,74,0.08);
+            color: #166534;
+        }
+
+        .info-box.lose {
+            border-left-color: #dc2626;
+            background: rgba(220,38,38,0.08);
+            color: #991b1b;
+        }
+
+        .info-section h3 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4b2b72;
+        }
+
+        /* Google Sheets Link Stili */
+        .match-link {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #4b2b72;
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .match-link:hover {
+            background: #6b3ca0;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 15px auto;
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .table th, .table td {
+                font-size: 0.75rem;
+                padding: 6px 4px;
+            }
+
+            .select-box {
+                font-size: 0.85rem;
+                padding: 8px 10px;
+            }
+
+            .info-box {
+                font-size: 0.8rem;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1>Offismekan Langırt Turnuva Tablosu</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Puan Tablosu</h2>
+        <table class="table" id="statsTable">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Takım</th>
+                <th>Maç</th>
+                <th>G</th>
+                <th>M</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="side-column">
+        <div class="card" style="margin-bottom: 30px;">
+            <h2>Aktif Maçlar</h2>
+            <div id="active-matches">
+                <a href="https://docs.google.com/spreadsheets/d/1H3ifzyTPSKhiAASst3kvWGVsZdJ4SoO-wD0zg_2W5QM/edit?usp=sharing" target="_blank" class="match-link">
+                    Google Sheets’te Görüntüle
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Takım Bilgileri</h2>
+            <div class="select-container">
+                <label for="teamSelect" class="label-select">Takım Seçin:</label>
+                <select id="teamSelect" class="select-box">
+                    <option value="">-- Takım Seçiniz --</option>
+                </select>
+            </div>
+            <div id="team-info"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let macData = [];
+    let results = {};
+
+    // JSON dosyalarını yükleme fonksiyonu
+    async function loadJSON(file) {
+        try {
+            const res = await fetch(file);
+            if (!res.ok) throw new Error("Yüklenemedi: " + file);
+            return await res.json();
+        } catch(e) {
+            console.error(e);
+            return file.includes('maclar') ? [] : {kazanilan_maclar:{}, mac_sayilari:{}, mac_durumlari:{}, kaybedilen_maclar:{}};
+        }
+    }
+
+    // Puan tablosunu render etme (sıralama dahil)
+    function renderTable() {
+        const tbody = document.querySelector("#statsTable tbody");
+        tbody.innerHTML = "";
+        const teams = Object.keys(results.mac_sayilari || {});
+
+        // Takımları galibiyet sayısına göre, eşitse mağlubiyet sayısına göre sırala
+        teams.sort((a, b) => {
+            const winsA = results.kazanilan_maclar[a] || 0;
+            const winsB = results.kazanilan_maclar[b] || 0;
+            const lossesA = results.kaybedilen_maclar[a] || 0;
+            const lossesB = results.kaybedilen_maclar[b] || 0;
+            if (winsB !== winsA) return winsB - winsA;
+            return lossesA - lossesB;
+        });
+
+        teams.forEach((team, i) => {
+            const totalMatches = results.mac_sayilari[team] || 0;
+            const wins = results.kazanilan_maclar[team] || 0;
+            const losses = results.kaybedilen_maclar[team] || 0;
+            const tr = document.createElement("tr");
+            tr.innerHTML = `<td>${i+1}</td><td>${team}</td><td>${totalMatches}</td><td class="win">${wins}</td><td class="lose">${losses}</td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // Seçilen takımın maç geçmişini döndüren fonksiyon
+    function getTeamMatchHistory(selectedTeam) {
+        const history = [];
+        Object.keys(results.mac_durumlari || {}).forEach(matchIndex => {
+            const winner = results.mac_durumlari[matchIndex];
+            const match = macData[parseInt(matchIndex)];
+            if(match && (match.takim1===selectedTeam || match.takim2===selectedTeam)){
+                const opponent = match.takim1===selectedTeam ? match.takim2 : match.takim1;
+                const isWin = winner === selectedTeam;
+                history.push({opponent, result: isWin ? 'win' : 'lose', matchIndex});
+            }
+        });
+        return history.sort((a,b)=>parseInt(b.matchIndex)-parseInt(a.matchIndex));
+    }
+
+    // Takım filtreleme ve bilgi gösterme işlevini kuran fonksiyon
+    function setupTeamFilter(){
+        const select = document.getElementById("teamSelect");
+        // Takımları dropdown menüye ekle
+        Object.keys(results.mac_sayilari).forEach(team => {
+            const option = document.createElement("option");
+            option.value = team;
+            option.textContent = team;
+            select.appendChild(option);
+        });
+
+        // Takım seçildiğinde bilgileri göster
+        select.addEventListener("change", () => {
+            const selectedTeam = select.value;
+            const teamInfoDiv = document.getElementById("team-info");
+            teamInfoDiv.innerHTML = "";
+            if(!selectedTeam) return;
+
+            const playedMatches = Object.keys(results.mac_durumlari || {});
+            const remainingMatches = macData.filter((match, index) => {
+                const isPlayed = playedMatches.includes(index.toString());
+                return !isPlayed && (match.takim1===selectedTeam || match.takim2===selectedTeam);
+            });
+
+            const history = getTeamMatchHistory(selectedTeam);
+
+            // Kalan maçları listele
+            if(remainingMatches.length > 0){
+                const remainingTitle = document.createElement("h3");
+                remainingTitle.textContent = `Kalan Maçlar (${remainingMatches.length})`;
+                teamInfoDiv.appendChild(remainingTitle);
+
+                remainingMatches.forEach(match => {
+                    const opponent = match.takim1===selectedTeam ? match.takim2 : match.takim1;
+                    const div = document.createElement("div");
+                    div.className = "info-box";
+                    div.textContent = opponent;
+                    teamInfoDiv.appendChild(div);
+                });
+            }
+
+            // Maç geçmişini listele
+            if(history.length > 0){
+                const historyTitle = document.createElement("h3");
+                historyTitle.textContent = "Maç Geçmişi";
+                teamInfoDiv.appendChild(historyTitle);
+
+                history.forEach(match => {
+                    const div = document.createElement("div");
+                    div.className = `info-box ${match.result}`;
+                    div.innerHTML = `<span>${match.opponent}</span><span>${match.result==='win'?'GALİBİYET':'MAĞLUBİYET'}</span>`;
+                    teamInfoDiv.appendChild(div);
+                });
+            }
+        });
+    }
+
+    // Sayfa yüklendiğinde tüm fonksiyonları çalıştır
+    async function init(){
+        macData = await loadJSON('maclar.json');
+        results = await loadJSON('mac_sonuclari.json');
+        renderTable();
+        setupTeamFilter();
+    }
+
+    init();
+</script>
+
+</body>
+</html>
