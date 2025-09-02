@@ -1,42 +1,40 @@
 {
   "mac_sayilari": {
-    "Pelin ÇINAR, Eda UZUN": 4,
+    "Pelin ÇINAR, Eda UZUN": 6,
     "Burak İNCİLER, Ünaltan ÖZÇELİK": 3,
     "Betül YILMAZ, Aras YILDIRIM": 8,
     "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 3,
-    "Sevgi Şenel, Elif KARACA": 2,
-    "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 2,
+    "Sevgi Şenel, Elif KARACA": 4,
+    "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 4,
     "Betül KARAHAN, Mutlu Naz ERDA": 6,
     "Ecem AY, Osman DOĞAN": 5,
     "Ceyhun ÖZTÜRK, Aykut AKKIN": 4,
     "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 9,
     "Berk SARPEL, Ali Çetinkaya": 7,
     "Muratcan Çevikbaş, Fatih Yılmaz": 8,
-    "Karin SUNA, Damla UZUN": 0,
     "Fatih ÇELEBİ, Umut Can İLHAN": 7
   },
   "kazanilan_maclar": {
     "Burak İNCİLER, Ünaltan ÖZÇELİK": 2,
     "Betül YILMAZ, Aras YILDIRIM": 4,
-    "Sevgi Şenel, Elif KARACA": 0,
+    "Sevgi Şenel, Elif KARACA": 1,
     "Betül KARAHAN, Mutlu Naz ERDA": 0,
     "Ecem AY, Osman DOĞAN": 2,
     "Ceyhun ÖZTÜRK, Aykut AKKIN": 3,
-    "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 1,
+    "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 3,
     "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 7,
     "Berk SARPEL, Ali Çetinkaya": 7,
     "Muratcan Çevikbaş, Fatih Yılmaz": 3,
-    "Karin SUNA, Damla UZUN": 0,
     "Fatih ÇELEBİ, Umut Can İLHAN": 2,
     "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 3,
     "Pelin ÇINAR, Eda UZUN": 0
   },
   "kaybedilen_maclar": {
-    "Pelin ÇINAR, Eda UZUN": 4,
+    "Pelin ÇINAR, Eda UZUN": 6,
     "Betül YILMAZ, Aras YILDIRIM": 4,
     "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 0,
     "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 1,
-    "Sevgi Şenel, Elif KARACA": 2,
+    "Sevgi Şenel, Elif KARACA": 3,
     "Ecem AY, Osman DOĞAN": 3,
     "Berk SARPEL, Ali Çetinkaya": 0,
     "Muratcan Çevikbaş, Fatih Yılmaz": 5,
@@ -80,7 +78,10 @@
     "6": "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM",
     "18": "Berk SARPEL, Ali Çetinkaya",
     "22": "Berk SARPEL, Ali Çetinkaya",
-    "33": "Betül YILMAZ, Aras YILDIRIM"
+    "33": "Betül YILMAZ, Aras YILDIRIM",
+    "10": "Sevgi Şenel, Elif KARACA",
+    "48": "Çinsu GÜNDÜZ, Fatih KAHRAMAN",
+    "3": "Çinsu GÜNDÜZ, Fatih KAHRAMAN"
   },
-  "son_guncelleme": "2025-08-27T18:17:13.914822"
+  "son_guncelleme": "2025-09-02T15:34:54.792987"
 }
