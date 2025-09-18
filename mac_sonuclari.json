@@ -3,21 +3,21 @@
     "Sevgi Şenel, Elif KARACA": 4,
     "Berk SARPEL, Ali Çetinkaya": 9,
     "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 4,
-    "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 9,
-    "Pelin ÇINAR, Eda UZUN": 6,
+    "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 10,
+    "Pelin ÇINAR, Eda UZUN": 7,
     "Muratcan Çevikbaş, Fatih Yılmaz": 10,
-    "Betül KARAHAN, Mutlu Naz ERDA": 6,
+    "Betül KARAHAN, Mutlu Naz ERDA": 7,
     "Ecem AY, Osman DOĞAN": 5,
     "Betül YILMAZ, Aras YILDIRIM": 8,
     "Ceyhun ÖZTÜRK, Aykut AKKIN": 4,
     "Fatih ÇELEBİ, Umut Can İLHAN": 7,
-    "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 5,
+    "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 6,
     "Burak İNCİLER, Ünaltan ÖZÇELİK": 5
   },
   "kazanilan_maclar": {
     "Berk SARPEL, Ali Çetinkaya": 8,
     "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 3,
-    "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 7,
+    "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 8,
     "Sevgi Şenel, Elif KARACA": 1,
     "Muratcan Çevikbaş, Fatih Yılmaz": 4,
     "Betül KARAHAN, Mutlu Naz ERDA": 0,
@@ -26,21 +26,23 @@
     "Ecem AY, Osman DOĞAN": 2,
     "Fatih ÇELEBİ, Umut Can İLHAN": 2,
     "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 5,
-    "Burak İNCİLER, Ünaltan ÖZÇELİK": 3
+    "Burak İNCİLER, Ünaltan ÖZÇELİK": 3,
+    "Pelin ÇINAR, Eda UZUN": 1
   },
   "kaybedilen_maclar": {
     "Sevgi Şenel, Elif KARACA": 3,
     "Pelin ÇINAR, Eda UZUN": 6,
     "Berk SARPEL, Ali Çetinkaya": 1,
     "Muratcan Çevikbaş, Fatih Yılmaz": 6,
-    "Betül KARAHAN, Mutlu Naz ERDA": 6,
+    "Betül KARAHAN, Mutlu Naz ERDA": 7,
     "Ecem AY, Osman DOĞAN": 3,
     "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM": 2,
     "Betül YILMAZ, Aras YILDIRIM": 5,
     "Fatih ÇELEBİ, Umut Can İLHAN": 5,
     "Çinsu GÜNDÜZ, Fatih KAHRAMAN": 1,
     "Ceyhun ÖZTÜRK, Aykut AKKIN": 1,
-    "Burak İNCİLER, Ünaltan ÖZÇELİK": 2
+    "Burak İNCİLER, Ünaltan ÖZÇELİK": 2,
+    "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN": 1
   },
   "mac_durumlari": {
     "0": "Berk SARPEL, Ali Çetinkaya",
@@ -83,7 +85,9 @@
     "19": "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN",
     "22": "Berk SARPEL, Ali Çetinkaya",
     "29": "Ferda Beyberk KOÇOĞLU, Ferhan Kemal ŞENGÜN",
-    "32": "Burak İNCİLER, Ünaltan ÖZÇELİK"
+    "32": "Burak İNCİLER, Ünaltan ÖZÇELİK",
+    "40": "Pelin ÇINAR, Eda UZUN",
+    "64": "Boğaç ONDALİKOĞLU, Mehmet Ali SALKIM"
   },
-  "son_guncelleme": "2025-09-03T15:53:35.160734"
+  "son_guncelleme": "2025-09-18T11:09:48.741100"
 }
